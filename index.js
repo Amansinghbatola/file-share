@@ -7,3 +7,9 @@ const progressPercent = document.querySelector("#progressPercent");
 const progressContainer = document.querySelector(".progress-container");
 const progressBar = document.querySelector(".progress-bar");
 const status = document.querySelector(".status");
+
+const bgProgress = document.querySelector(".bg-progress");
+const progressPercent = document.querySelector("#progressPercent");
+const progressContainer = document.querySelector(".progress-container");
+const progressBar = document.querySelector(".progress-bar");
+const status = document.querySelector(".status");
