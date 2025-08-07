@@ -153,4 +153,23 @@ emailForm.addEventListener("submit", (e) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(formData),
-  }
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.success) {
+        showToast("Email Sent");
+        sharingContainer.style.display = "none"; // hide the box
+      }
+    });
+});
+
+let toastTimer;
+// the toast function
+const showToast = (msg) => {
+  clearTimeout(toastTimer);
+  toast.innerText = msg;
+  toast.classList.add("show");
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2000);
+};
