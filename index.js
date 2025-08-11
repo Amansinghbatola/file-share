@@ -113,10 +113,3 @@ const uploadFile = () => {
     }
   };
 
-  xhr.open("POST", uploadURL);
-  xhr.send(formData);
-};
-
-const onFileUploadSuccess = (res) => {
-  fileInput.value = ""; // reset the input
-  statu
