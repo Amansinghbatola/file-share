@@ -80,13 +80,4 @@ fileURL.addEventListener("click", () => {
 const uploadFile = () => {
   console.log("file added uploading");
 
-  files = fileInput.files;
-  const formData = new FormData();
-  formData.append("myfile", files[0]);
-
-  //show the uploader
-  progressContainer.style.display = "block";
-
-  // upload file
-  const xhr = new XMLHttpRequest();
-
+  f
