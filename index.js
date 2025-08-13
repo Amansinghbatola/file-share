@@ -130,34 +130,3 @@ const onFileUploadSuccess = (res) => {
   console.log(url);
   sharingContainer.style.display = "block";
   fileURL.value = url;
-};
-
-emailForm.addEventListener("submit", (e) => {
-  e.preventDefault(); // stop submission
-
-  // disable the button
-  emailForm[2].setAttribute("disabled", "true");
-  emailForm[2].innerText = "Sending";
-
-  const url = fileURL.value;
-
-  const formData = {
-    uuid: url.split("/").splice(-1, 1)[0],
-    emailTo: emailForm.elements["to-email"].value,
-    emailFrom: emailForm.elements["from-email"].value,
-  };
-  console.log(formData);
-  fetch(emailURL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.success) {
-        showToast("Email Sent");
-        sharingContainer.style.display = "none"; // hide the box
-      }
-    });
