@@ -161,15 +161,3 @@ emailForm.addEventListener("submit", (e) => {
         sharingContainer.style.display = "none"; // hide the box
       }
     });
-});
-
-let toastTimer;
-// the toast function
-const showToast = (msg) => {
-  clearTimeout(toastTimer);
-  toast.innerText = msg;
-  toast.classList.add("show");
-  toastTimer = setTimeout(() => {
-    toast.classList.remove("show");
-  }, 2000);
-};
