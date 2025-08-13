@@ -121,12 +121,4 @@ const onFileUploadSuccess = (res) => {
   fileInput.value = ""; // reset the input
   status.innerText = "Uploaded";
 
-  // remove the disabled attribute from form btn & make text send
-  emailForm[2].removeAttribute("disabled");
-  emailForm[2].innerText = "Send";
-  progressContainer.style.display = "none"; // hide the box
-
-  const { file: url } = JSON.parse(res);
-  console.log(url);
-  sharingContainer.style.display = "block";
-  fileURL.value = url;
+  /
