@@ -164,12 +164,4 @@ emailForm.addEventListener("submit", (e) => {
 });
 
 let toastTimer;
-// the toast function
-const showToast = (msg) => {
-  clearTimeout(toastTimer);
-  toast.innerText = msg;
-  toast.classList.add("show");
-  toastTimer = setTimeout(() => {
-    toast.classList.remove("show");
-  }, 2000);
-};
+// the
