@@ -1,16 +1,3 @@
-const dropZone = document.querySelector(".drop-zone");
-const fileInput = document.querySelector("#fileInput");
-const browseBtn = document.querySelector("#browseBtn");
-
-const bgProgress = document.querySelector(".bg-progress");
-
-const toast = document.querySelector(".toast");
-
-const baseURL = "https://innshare.herokuapp.com";
-const uploadURL = `${baseURL}/api/files`;
-const emailURL = `${baseURL}/api/files/send`;
-
-const maxAllowedSize = 100 * 1024 * 1024; //100mb
 
 
 browseBtn.addEventListener("click", () => {
