@@ -7,14 +7,7 @@ browseBtn.addEventListener("click", () => {
 dropZone.addEventListener("drop", (e) => {
   e.preventDefault();
   //   console.log("dropped", e.dataTransfer.files[0].name);
-  const files = e.dataTransfer.files;
-  if (files.length === 1) {
-    if (files[0].size < maxAllowedSize) {
-      fileInput.files = files;
-      uploadFile();
-    } else {
-      showToast("Max file size is 100MB");
-    }
+ 
   } else if (files.length > 1) {
     showToast("You can't upload multiple files");
   }
