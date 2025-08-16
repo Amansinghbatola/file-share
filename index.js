@@ -1,3 +1,25 @@
+const dropZone = document.querySelector(".drop-zone");
+const fileInput = document.querySelector("#fileInput");
+const browseBtn = document.querySelector("#browseBtn");
+
+const bgProgress = document.querySelector(".bg-progress");
+const progressPercent = document.querySelector("#progressPercent");
+const progressContainer = document.querySelector(".progress-container");
+const progressBar = document.querySelector(".progress-bar");
+const status = document.querySelector(".status");
+
+const sharingContainer = document.querySelector(".sharing-container");
+const copyURLBtn = document.querySelector("#copyURLBtn");
+const fileURL = document.querySelector("#fileURL");
+const emailForm = document.querySelector("#emailForm");
+
+const toast = document.querySelector(".toast");
+
+const baseURL = "https://innshare.herokuapp.com";
+const uploadURL = `${baseURL}/api/files`;
+const emailURL = `${baseURL}/api/files/send`;
+
+const maxAllowedSize = 100 * 1024 * 1024; //100mb
 
 
 browseBtn.addEventListener("click", () => {
@@ -7,7 +29,14 @@ browseBtn.addEventListener("click", () => {
 dropZone.addEventListener("drop", (e) => {
   e.preventDefault();
   //   console.log("dropped", e.dataTransfer.files[0].name);
- 
+  const files = e.dataTransfer.files;
+  if (files.length === 1) {
+    if (files[0].size < maxAllowedSize) {
+      fileInput.files = files;
+      uploadFile();
+    } else {
+      showToast("Max file size is 100MB");
+    }
   } else if (files.length > 1) {
     showToast("You can't upload multiple files");
   }
